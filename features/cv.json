@@ -1,0 +1,212 @@
+{
+  "headers": [
+    {
+      "title": "About Me",
+      "payload": "About Me"
+    },
+    {
+      "title": "Work Experience",
+      "payload": "Work Experience"
+    },
+    {
+      "title": "Education",
+      "payload": "Education"
+    },
+    {
+      "title": "Skills",
+      "payload": "Skills"
+    },
+    {
+      "title": "Projects",
+      "payload": "Projects"
+    },
+    {
+      "title": "Social Media",
+      "payload": "Social Media"
+    },
+    {
+      "title": "Contact Info",
+      "payload": "Contact Info"
+    }
+  ],
+  "bio": {
+    "name": "Rakin Rouf",
+    "email": "rakinr57@gmail.com",
+    "summary": "I'm a software developer and experienced programmer located in San Francisco. I've developed software in various areas including web development, bioinformatics, and data analysis. I'm currently looking to become a full time full stack engineer specializing in React.js, Javascript, Ruby, and Node.js.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/rakin-rouf-6607b21a4/"
+      },
+      {
+        "network": "AngelList",
+        "url": "https://angel.co/u/rakin-rouf"
+      },
+      {
+        "network": "Github",
+        "url": "https://github.com/rakinaa"
+      }
+    ]
+  },
+  "work": {
+    "intro": "These are the companies I have worked for, feel free to find out more",
+    "data": [
+      {
+        "name": "NC State - Wheat Genomics",
+        "position": "Programmer/Laboratory Technician",
+        "startDate": "2015-08",
+        "endDate": "2017-09",
+        "summary": "I was responsible for planning and implementing the technical analysis of a scientific study that mapped the changes in gene expression between a soybean hybrid and its parents. I utilized Python and shell scripting to run bioinformatics software on Linux operating systems as well as creating tools to convert between different genetic file formats."
+      },
+      {
+        "name": "NC State - USDA",
+        "position": "Programmer/Laboratory Technician",
+        "startDate": "2018-07",
+        "endDate": "2019-03",
+        "summary": "I managed a MySQL database containing information on wheat cultivars, ensuring that the data stored was well organized and easily accessible as well as maintainable in the future. Alongside managing the database, I was responsible for creating scripts to be used in various technical analyses on large files. I used various methods to make the scripts as fast and efficient as possible, including parallel processing, multi-threading, and indexing."
+      },
+      {
+        "name": "The Ohio State University",
+        "position": "Programmer/Laboratory Technician",
+        "startDate": "2013-05",
+        "endDate": "2014-08",
+        "summary": "I created a GUI using Python to process and analyze genetic data in order to provide a tool that could be used by scientists to conduct experiments more easily. I utilized Python's subprocess module to execute shell commands according to specifications captured by the user interface."
+      },
+      {
+        "name": "The University of Akron",
+        "position": "Math Tutor",
+        "startDate": "2013-04",
+        "endDate": "2014-05",
+        "summary": "I helped students from various backgrounds to improve their math skills, complete their homework, and study for tests in both one-on-one sessions and study groups."
+      }
+    ]
+  },
+  "education": {
+    "intro": "I have received education in both computer science through both a college degree and an accredited coding bootcamp, click below to find out more",
+    "data": [
+      {
+        "name": "App Academy",
+        "institution": "App Academy",
+        "area": "Computer Science",
+        "studyType": "Full Stack Web Development",
+        "startDate": "2019-12",
+        "endDate": "2020-04",
+        "gpa": "",
+        "courses": []
+      },
+      {
+        "name": "College Degree",
+        "institution": "The University of Akron",
+        "area": "Computer Science",
+        "studyType": "Bachelor of Science",
+        "startDate": "2011-08",
+        "endDate": "2016-04",
+        "gpa": "3.6",
+        "courses": []
+      }
+    ]
+  },
+  "publications": [
+    {
+      "name": "Changes in gene expression between a soybean F1 hybrid and its parents are associated with agronomically valuable traits",
+      "publisher": "PLOS One",
+      "releaseDate": "2017-05",
+      "website": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0177225",
+      "summary": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "React.js"
+    },
+    {
+      "name": "Redux"
+    },
+    {
+      "name": "HTML5"
+    },
+    {
+      "name": "SASS"
+    },
+    {
+      "name": "CSS3"
+    },
+    {
+      "name": "Ruby on Rails"
+    },
+    {
+      "name": "Ruby"
+    },
+    {
+      "name": "Python"
+    },
+    {
+      "name": "Bash"
+    },
+    {
+      "name": "Webpack"
+    },
+    {
+      "name": "MongoDB"
+    },
+    {
+      "name": "Amazon Web Services"
+    },
+    {
+      "name": "Git"
+    },
+    {
+      "name": "Web Development"
+    },
+    {
+      "name": "Node.js"
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "PostgreSQL"
+    },
+    {
+      "name": "Full-Stack Development"
+    },
+    {
+      "name": "Express.js"
+    }
+  ],
+  "projects": {
+    "intro": "Here are the projects I have worked on, links to both github and live website are available",
+    "data": [
+      {
+        "name": "Greentrade",
+        "role": "Full Stack Developer",
+        "startDate": "2020-04",
+        "live": "https://greentrade.herokuapp.com/#/",
+        "github": "https://github.com/rakinaa/greentrade",
+        "summary": "A clone of the site Robin Hood made with Reactjs using React Hooks, Ruby on Rails, and Postgresql. Allows users to search for and view stocks in real time, displaying prices on interactive charts."
+      },
+      {
+        "name": "Pictr",
+        "role": "Full Stack Developer",
+        "startDate": "2020-03",
+        "live": "https://pictrapp.herokuapp.com/#/",
+        "github": "https://github.com/rakinaa/full_stack_project",
+        "summary": "Javascript, Ruby on Rails, React Js · A photo sharing app made in the image of flickr. Users can share and comment on photos with others as well and create albums with their favorite photos."
+      },
+      {
+        "name": "Seam Carving",
+        "role": "Full Stack Developer",
+        "startDate": "2020-04",
+        "live": "https://rakinaa.github.io/seam_carving/dist/",
+        "github": "https://github.com/rakinaa/seam_carving",
+        "summary": "A website that visualizes the seam carving image cropping algorithm. Utilizes HTML canvas and clamped arrays to edit image data on the browser."
+      }
+    ]
+  }
+}
