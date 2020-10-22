@@ -37,30 +37,27 @@ async function getSchool(schoolData, bot, message) {
 let schools = cv.education.data
 
 module.exports = function (controller) {
+  controller.hears(new RegExp(/edu/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, getResponse(cv.education));
+      }, 1000);
+    });
 
-  if (controller.adapter.name === 'Web Adapter') {
-    controller.hears(new RegExp(/edu/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await bot.reply(message, getResponse(cv.education));
-        }, 1000);
-      });
+  controller.hears(new RegExp(/app/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getSchool(schools[0], bot, message)
+      }, 1000);
+    });
 
-    controller.hears(new RegExp(/app/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getSchool(schools[0], bot, message)
-        }, 1000);
-      });
-
-    controller.hears(new RegExp(/college/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getSchool(schools[1], bot, message)
-        }, 1000);
-      });
-  }
+  controller.hears(new RegExp(/college/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getSchool(schools[1], bot, message)
+      }, 1000);
+    });
 }

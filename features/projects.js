@@ -39,38 +39,35 @@ async function getProject(projectData, bot, message) {
 let projects = cv.projects.data
 
 module.exports = function (controller) {
+  controller.hears(new RegExp(/project/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, getResponse(cv.projects));
+      }, 1000);
+    });
 
-  if (controller.adapter.name === 'Web Adapter') {
-    controller.hears(new RegExp(/project/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await bot.reply(message, getResponse(cv.projects));
-        }, 1000);
-      });
+  controller.hears(new RegExp(/green/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getProject(projects[0], bot, message)
+      }, 1000);
+    });
 
-    controller.hears(new RegExp(/green/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getProject(projects[0], bot, message)
-        }, 1000);
-      });
+  controller.hears(new RegExp(/pict/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getProject(projects[1], bot, message)
+      }, 1000);
+    });
 
-    controller.hears(new RegExp(/pict/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getProject(projects[1], bot, message)
-        }, 1000);
-      });
-
-    controller.hears(new RegExp(/(seam)|(carve)/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getProject(projects[2], bot, message)
-        }, 1000);
-      });
-  }
+  controller.hears(new RegExp(/(seam)|(carve)/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getProject(projects[2], bot, message)
+      }, 1000);
+    });
 }

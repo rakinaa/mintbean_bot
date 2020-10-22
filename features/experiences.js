@@ -36,57 +36,54 @@ async function getJob(jobData, bot, message, overrideQR=false) {
 let positions = cv.work.data
 
 module.exports = function (controller) {
+  controller.hears(new RegExp(/(experience)|(work)/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await bot.reply(message, getResponse(cv.work));
+      }, 1000);
+    });
 
-  if (controller.adapter.name === 'Web Adapter') {
-    controller.hears(new RegExp(/(experience)|(work)/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await bot.reply(message, getResponse(cv.work));
-        }, 1000);
-      });
+  controller.hears(new RegExp(/USDA/i), 'message', async (bot, message) => { 
+      await bot.reply(message, { type: 'typing' }); 
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getJob(positions[1], bot, message)
+      }, 1000);
+    });
 
-    controller.hears(new RegExp(/USDA/i), 'message', async (bot, message) => { 
-        await bot.reply(message, { type: 'typing' }); 
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getJob(positions[1], bot, message)
-        }, 1000);
-      });
+  controller.hears(new RegExp(/Wheat/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
 
-    controller.hears(new RegExp(/Wheat/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getJob(positions[0], bot, message)
+      }, 1000);
+    });
 
-          await bot.changeContext(message.reference);
-          await getJob(positions[0], bot, message)
-        }, 1000);
-      });
+  controller.hears(new RegExp(/Ohio/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getJob(positions[2], bot, message)
+      }, 1000);
+    });
 
-    controller.hears(new RegExp(/Ohio/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getJob(positions[2], bot, message)
-        }, 1000);
-      });
+  controller.hears(new RegExp(/Akron/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getJob(positions[3], bot, message)
+      }, 1000);
+    });
 
-    controller.hears(new RegExp(/Akron/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getJob(positions[3], bot, message)
-        }, 1000);
-      });
-
-    controller.hears(new RegExp(/(NC)|(North)|(Carolina)/i), 'message', async (bot, message) => {
-        await bot.reply(message, { type: 'typing' });
-        setTimeout(async () => {
-          await bot.changeContext(message.reference);
-          await getJob(positions[0], bot, message, true)
-          await getJob(positions[1], bot, message, true)
-          await bot.reply(message, getResponse(cv.work, [positions[0].name, positions[1].name]));
-        }, 1000);
-      });
-  }
+  controller.hears(new RegExp(/(NC)|(North)|(Carolina)/i), 'message', async (bot, message) => {
+      await bot.reply(message, { type: 'typing' });
+      setTimeout(async () => {
+        await bot.changeContext(message.reference);
+        await getJob(positions[0], bot, message, true)
+        await getJob(positions[1], bot, message, true)
+        await bot.reply(message, getResponse(cv.work, [positions[0].name, positions[1].name]));
+      }, 1000);
+    });
 }
